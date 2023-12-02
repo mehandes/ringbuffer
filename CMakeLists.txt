@@ -3,9 +3,10 @@ project(ringbuffer LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-add_library(ringbuffer src/ringbuffer.cpp)
-target_include_directories(ringbuffer PUBLIC src/)
+add_library(ringbuffer src/ringbuffer.cc)
+target_include_directories(ringbuffer PUBLIC include)
 
 option(PACKAGE_TESTS "Build the tests" ON)
 if (PACKAGE_TESTS)
