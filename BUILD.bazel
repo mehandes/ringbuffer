@@ -1,0 +1,15 @@
+cc_library(
+    name = "ringbuffer",
+    srcs = ["src/ringbuffer.cc"],
+    hdrs = ["src/ringbuffer.h"],
+)
+
+cc_test(
+    name = "ringbuffer-test",
+    srcs = ["test/ringbuffer-test.cc"],
+    deps = [
+        ":ringbuffer",
+        "@gtest//:gtest",
+        "@glog//:glog",
+    ],
+)
